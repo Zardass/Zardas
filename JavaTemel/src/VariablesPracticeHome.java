@@ -8,7 +8,9 @@ public class VariablesPracticeHome {
         System.out.println("hasJob : " + hasJob);
         //*************************************
 
-        
+        char studentGrade = 'C';
+        System.out.println("studentGrade : " + studentGrade);
+        //**************************************
 
 
     }
