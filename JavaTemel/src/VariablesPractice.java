@@ -17,7 +17,8 @@ public class VariablesPractice {
         System.out.println("productPrice : " + productPrice);
         //****************************************
 
-        
+         String studentName = "Yaqub";
+         System.out.println("studentName : " + studentName);
 
 
 
