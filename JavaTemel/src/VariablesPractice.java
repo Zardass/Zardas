@@ -8,8 +8,17 @@ public class VariablesPractice {
 
         System.out.println("hasHome : " + hasHome);
         //*************************************
+
         char studentGrade = 'A';
         System.out.println("studentGrade : " + studentGrade);
+        //***************************************
+
+        double productPrice = 3.8;
+        System.out.println("productPrice : " + productPrice);
+        //****************************************
+
+        
+
 
 
     }
