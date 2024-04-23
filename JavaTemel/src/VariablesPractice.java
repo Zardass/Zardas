@@ -6,9 +6,10 @@ public class VariablesPractice {
         //************************************
         boolean hasHome = true;
 
-        System.out.println(hasHome);
+        System.out.println("hasHome : " + hasHome);
         //*************************************
-        
+        char studentGrade = 'A';
+        System.out.println("studentGrade : " + studentGrade);
 
 
     }
