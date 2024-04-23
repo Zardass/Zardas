@@ -4,6 +4,10 @@ public class VariablesPracticeHome {
         System.out.println("age : " + age);
         //*********************************
 
+        boolean hasJob = false;
+        System.out.println("hasJob : " + hasJob);
+        //*************************************
+
         
 
 
