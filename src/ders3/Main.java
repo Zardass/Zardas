@@ -9,6 +9,6 @@ public class Main {
 //        System.out.println(c);
         int a = 5;
         System.out.println(a++ + a++);
-        System.out.println(a);
+        System.out.println(a++);
     }
 }
