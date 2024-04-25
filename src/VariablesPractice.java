@@ -14,7 +14,5 @@ public class VariablesPractice {
 
         String studentName = "Yaqub";
         System.out.println("studentName : " + studentName);
-
-
     }
 }
