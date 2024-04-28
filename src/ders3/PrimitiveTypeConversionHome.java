@@ -28,7 +28,7 @@ public class PrimitiveTypeConversionHome {
 
         int num12 = 266;
         char value2 = (char)num12;
-        System.out.println("int deyeri " + num12 + "-in int-a cevrilmesi: " + value2);
+        System.out.println("int deyeri: " + num12 + "-in int-a cevrilmesi: " + value2);
 
 
 
