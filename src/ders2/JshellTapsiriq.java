@@ -1,3 +1,5 @@
+package ders2;
+
 public class JshellTapsiriq {
     public static void main(String[] args) {
        /* C:\Users\HP>jshell
