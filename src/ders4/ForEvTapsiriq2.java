@@ -9,6 +9,5 @@ public class ForEvTapsiriq2 {
                 System.out.println(i);
             }
         }
-
     }
 }

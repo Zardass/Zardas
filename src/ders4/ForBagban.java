@@ -7,13 +7,14 @@ public class ForBagban {
         double agacBoyumesi = 0.15;
         double agacBoyu = 0.3;
         int gunSayi = 0;
-        while (agacBoyu < 10.0) {
+        double maxBoy = 10.0;
+        while (agacBoyu < maxBoy) {
             agacBoyu += suVerilen * agacBoyumesi;
             suVerilen *= 1.5;
             gunSayi++;
         }
 
-        System.out.println("Agac 10 metr boya " + gunSayi + " gün sonra catar.");
+        System.out.println("Agac" +maxBoy +" metr boya " + gunSayi + " gün sonra catar.");
 
     }
 }
