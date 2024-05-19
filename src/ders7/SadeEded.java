@@ -2,20 +2,23 @@ package ders7;
 
 public class SadeEded {
     public static void main(String[] args) {
-        int[] numbers = {11, 12, 9, 17};
+        int[] numbers = {11, 12, 9, 17,98};
 
-
-        for (int i = 0; i < numbers.length; i++) {
-            for (int j = 2; j < numbers[i]; j++) {
-                if (numbers[i] % j == 0) {
-                    System.out.println(numbers[i] + " sade eded deyil");
-                }
+        for(int ededim:numbers){
+            if (sadedirmi(ededim)){
+                System.out.println(ededim);
             }
-         //   System.out.println(numbers[i] + " sadedir");
-            }
-
-
-
         }
     }
+    static boolean  sadedirmi(int eded){
+        boolean netice = false;
 
+        for (int i = 2; i < eded; i++) {
+            if (eded % i == 0){
+                netice = false;
+                break;
+            }
+        }
+        return netice;
+        }
+    }
