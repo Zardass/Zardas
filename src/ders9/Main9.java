@@ -15,14 +15,15 @@ public class Main9 {
 
         boolean b1 = a.endsWith("sa");
         System.out.println(b1);
-        System.out.println(a.indexOf("s,9"));
+        System.out.println(a.contains(" "));
+        System.out.println(a.indexOf("s"));
 
-        String s1 = "Developia";
-        String[] bolmek = s1.split("e");
-        System.out.println(Arrays.toString(bolmek));
-
-        char[] chars = s1.toCharArray();
-        System.out.println(chars);
+//        String s1 = "Developia";
+//        String[] bolmek = s1.split("e");
+//        System.out.println(Arrays.toString(bolmek));
+//
+//        char[] chars = s1.toCharArray();
+//        System.out.println(chars);
 //        String s2 = "Developer";
 //        System.out.println(s1.regionMatches(1,s2,0,5));
 
