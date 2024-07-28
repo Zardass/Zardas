@@ -1,20 +1,16 @@
 package az.developia.springjava16;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/student-controller")
 public class StudentController {
-
-
 
     @GetMapping("/search")
     public List<StudentList> searchStudents(
@@ -33,9 +29,8 @@ public class StudentController {
                 new StudentList("liana", "kerimova")
         );
 
-        return students.stream().filter(s -> s.getName().contains(sorgu)).
-                collect(Collectors.toList());
+        return students.stream()
+                .filter(s -> s.getName().contains(sorgu))
+                .collect(Collectors.toList());
     }
-
-
 }

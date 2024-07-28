@@ -8,9 +8,10 @@ import org.springframework.stereotype.Component;
 public class Student {
     private String name;
     private int age;
+
     @Autowired
-   // @Qualifier(value = "computer")
-    private  Computer computer; //agregration
+    @Qualifier("myComputer")
+    private Computer computer; // doğru bean'ı enjekte ediyoruz
 
     public String getName() {
         return name;
@@ -28,17 +29,16 @@ public class Student {
         this.age = age;
     }
 
-    public Student() {
-        name = "zerda";
-        age = 20;
-    }
-
     public Computer getComputer() {
         return computer;
     }
 
-
     public void setComputer(Computer computer) {
         this.computer = computer;
+    }
+
+    public Student() {
+        name = "zerda";
+        age = 20;
     }
 }
