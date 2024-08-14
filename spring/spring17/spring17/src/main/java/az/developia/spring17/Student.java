@@ -1,16 +1,19 @@
-package az.developia.springjava16;
+package az.developia.spring17;
 
+import jakarta.persistence.*;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+@Entity
+@Table(name = "students")
 
+public class Student {
 
-public class StudentList {
-
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
     private String surname;
 
-    public StudentList(String name, String surname) {
+    public Student(String name, String surname) {
         this.name = name;
         this.surname = surname;
     }
@@ -31,5 +34,16 @@ public class StudentList {
         this.surname = surname;
     }
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Student() {
+
+    }
 }
+
