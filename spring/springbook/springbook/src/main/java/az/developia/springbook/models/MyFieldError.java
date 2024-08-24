@@ -1,4 +1,4 @@
-package az.developia.springbook.handlers;
+package az.developia.springbook.models;
 
 import lombok.Data;
 

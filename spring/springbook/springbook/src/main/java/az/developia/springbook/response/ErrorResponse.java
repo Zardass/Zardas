@@ -1,5 +1,6 @@
-package az.developia.springbook.handlers;
+package az.developia.springbook.response;
 
+import az.developia.springbook.models.MyFieldError;
 import lombok.Data;
 
 import java.time.LocalDateTime;

@@ -1,9 +1,7 @@
-package az.developia.springbook.handlers;
+package az.developia.springbook.exception;
 
 import lombok.Data;
 import org.springframework.validation.BindingResult;
-
-import java.time.LocalDateTime;
 
 @Data
 public class OurException extends RuntimeException {
