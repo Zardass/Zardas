@@ -79,4 +79,18 @@ public class BookServiceImpl implements BookService {
         mapper.map(req,entity);
         repository.save(entity);
     }
+
+    @Override
+    public BookListResponseDTO findAllPagination(Integer begin, Integer length) {
+        List<BookEntity> entities = repository.findAllPagination(begin,length);
+        BookListResponseDTO dto = new BookListResponseDTO();
+        List<BookResponseDTOEntity> dtoEntities = new ArrayList<>();
+        for (BookEntity en : entities) {
+            BookResponseDTOEntity dt = new BookResponseDTOEntity();
+            mapper.map(en, dt);
+            dtoEntities.add(dt);
+        }
+        dto.setBooks(dtoEntities);
+        return dto;
+    }
 }

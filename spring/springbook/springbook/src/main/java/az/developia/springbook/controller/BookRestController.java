@@ -1,5 +1,6 @@
 package az.developia.springbook.controller;
 
+import az.developia.springbook.MessageSender;
 import az.developia.springbook.exception.OurException;
 import az.developia.springbook.request.BookAddRequestDTO;
 import az.developia.springbook.request.BookUpdateNameRequestDTO;
@@ -26,6 +27,7 @@ public class BookRestController {
      restcontrolleri de deyismek lazim gelir ona gore service yazulir
      */
     private final BookService service;
+    private final MessageSender sender;
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
@@ -68,6 +70,7 @@ public class BookRestController {
   // /book
     public BookListResponseDTO findAll(){
 
+        sender.send("yeyinti var");
         return service.findAll();
     }
     @PatchMapping
@@ -77,6 +80,13 @@ public class BookRestController {
         }
 
         service.updateName(req);
+    }
+
+    @GetMapping(path = "/pagination/begin/{begin}/length/{length}")
+  // /books/pagination/begin/80/length/10
+    public BookListResponseDTO findAllPagination(@PathVariable Integer begin,@PathVariable Integer length){
+
+        return service.findAllPagination(begin,length);
     }
 
 }
