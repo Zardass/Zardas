@@ -9,6 +9,9 @@ import java.util.List;
 public interface BookRepository extends JpaRepository<BookEntity,Long> {
     @Query(value = "select * from books limit ?1 , ?2" ,nativeQuery = true)
     List<BookEntity> findAllPagination(Integer begin, Integer length);
-    //findAllPagination(3,10)
+//findAllPagination(3,10)
+
+    @Query(value = "select * from books where name like %?1%" ,nativeQuery = true)
+    List<BookEntity> findAllSearchName(String name);
 
 }

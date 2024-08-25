@@ -86,7 +86,16 @@ public class BookRestController {
   // /books/pagination/begin/80/length/10
     public BookListResponseDTO findAllPagination(@PathVariable Integer begin,@PathVariable Integer length){
 
+        if (length > 100) {
+            throw new OurException("melumati 100-den cox daxil etmeyin.","",null);
+        }
         return service.findAllPagination(begin,length);
     }
 
+    @GetMapping(path = "/name-search/{name}")
+ //   /books/name-search/zerda
+    public BookListResponseDTO findByName(@PathVariable String name){
+
+        return service.findByName(name);
+    }
 }
