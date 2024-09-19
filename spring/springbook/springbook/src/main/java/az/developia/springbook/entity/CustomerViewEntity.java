@@ -1,10 +1,8 @@
 package az.developia.springbook.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.hibernate.annotations.Immutable;
 
 import java.util.List;
 
@@ -14,8 +12,9 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
-public class CustomerEntity {
+@Immutable
+@ToString
+public class CustomerViewEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +24,7 @@ public class CustomerEntity {
 
     private String phone;
 
-
+    private Integer orderCount;
 
 
 

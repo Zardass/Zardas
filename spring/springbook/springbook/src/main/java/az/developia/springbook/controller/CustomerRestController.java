@@ -3,6 +3,7 @@ package az.developia.springbook.controller;
 import az.developia.springbook.MessageSender;
 import az.developia.springbook.exception.OurException;
 import az.developia.springbook.repository.CustomerRepository;
+import az.developia.springbook.repository.CustomerViewRepository;
 import az.developia.springbook.request.BookAddRequestDTO;
 import az.developia.springbook.request.BookUpdateNameRequestDTO;
 import az.developia.springbook.request.BookUpdateRequestDTO;
@@ -22,6 +23,8 @@ import org.springframework.web.bind.annotation.*;
 public class CustomerRestController {
 
     private final CustomerRepository repository;
+    private final CustomerViewRepository viewRepositoryrepository;
+
 
     @GetMapping(path = "/{id}")
     // /book/20
@@ -29,6 +32,7 @@ public class CustomerRestController {
 
         CustomerResponseDTO resp = new CustomerResponseDTO();
         resp.setCustomer(repository.findById(id).get());
+        System.out.println(viewRepositoryrepository.findAll());
         return resp;
 
     }
