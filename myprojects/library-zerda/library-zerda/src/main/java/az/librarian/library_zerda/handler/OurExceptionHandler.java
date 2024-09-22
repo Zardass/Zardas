@@ -19,27 +19,20 @@ public class OurExceptionHandler {
 
     @ExceptionHandler
     public ErrorResponse handleException(OurException exc) {
-        ErrorResponse response = new ErrorResponse();
-        response.setMessage(exc.getMessage());
-        response.setInternalMessage(exc.getInternalMessage());
-        response.setTimeStamp(LocalDateTime.now());
-
-       
-        BindingResult bindingResult = exc.getBindingResult();
-        List<FieldError> fieldErrors = bindingResult.getFieldErrors();
-        List<MyFieldError> errors = new ArrayList<>();
-
+        ErrorResponse resp = new ErrorResponse();
+        resp.setMessage(exc.getMessage());
+        BindingResult br = exc.getBindingResult();
+        List<FieldError> fieldErrors = br.getFieldErrors();
+        List<MyFieldError> errors = new ArrayList<MyFieldError>();
         for (FieldError e : fieldErrors) {
-            MyFieldError error = new MyFieldError();
-            error.setField(e.getField());
-            error.setMessage(e.getDefaultMessage());
-            errors.add(error);
+            MyFieldError er = new MyFieldError();
+            er.setField(e.getField());
+            er.setMessage(e.getDefaultMessage());
+            errors.add(er);
         }
-
-        response.setFieldErrors(errors);
-        return response;
+        resp.setFieldErrors(errors);
+        return resp;
     }
-
     }
 
 
