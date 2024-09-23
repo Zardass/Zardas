@@ -8,10 +8,7 @@ import az.librarian.library_zerda.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
@@ -27,4 +24,9 @@ public class UserRestController {
             }
             service.add(req);
         }
+
+    @PostMapping("/{userId}/books/{bookId}")
+    public void addBookToUser(@PathVariable Long userId, @PathVariable Long bookId) {
+        service.addBookToUser(userId, bookId);
     }
+}

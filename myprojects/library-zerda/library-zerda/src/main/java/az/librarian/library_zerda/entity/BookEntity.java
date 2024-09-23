@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "books")
@@ -26,12 +27,6 @@ public class BookEntity {
 
     private String pageCount;
 
-    // Kitablarla əlaqəni göstərmək üçün Many-to-Many əlaqə
-    @ManyToMany
-    @JoinTable(
-            name = "student_books",
-            joinColumns = @JoinColumn(name = "student_id"),
-            inverseJoinColumns = @JoinColumn(name = "book_id"))
-    private List<BookEntity> borrowedBooks; // Tələbənin aldığı kitablar
-
+    @ManyToMany(mappedBy = "books")
+    private Set<UserEntity> users;
 }
