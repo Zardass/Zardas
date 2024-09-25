@@ -27,6 +27,8 @@ public class BookEntity {
 
     private String pageCount;
 
-    @ManyToMany(mappedBy = "books")
-    private Set<UserEntity> users;
+    private boolean borrowed;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private UserEntity borrowedBy;
 }

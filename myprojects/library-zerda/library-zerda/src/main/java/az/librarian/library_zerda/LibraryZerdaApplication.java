@@ -9,6 +9,4 @@ public class LibraryZerdaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(LibraryZerdaApplication.class, args);
 	}
-
 }
-          

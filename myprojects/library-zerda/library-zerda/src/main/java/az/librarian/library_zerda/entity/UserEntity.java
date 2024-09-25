@@ -1,10 +1,7 @@
 package az.librarian.library_zerda.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +11,7 @@ import java.util.Set;
 @Table(name = "users")
 @Getter
 @Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserEntity {
@@ -30,12 +28,5 @@ public class UserEntity {
 
     private String email;
 
-    @ManyToMany
-    @JoinTable(
-            name = "user_books",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "book_id")
-    )
 
-    private List<BookEntity> books = new ArrayList<>();
 }

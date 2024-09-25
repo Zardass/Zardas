@@ -16,9 +16,6 @@ public class BookAddRequestDto {
     @NotBlank(message = "name cannot be blank")
     private String name;
 
-    private Double price;
-
-
     @Min(value = 1,message = "The minimum number of pages can be 1")
     private Integer pageCount;
 

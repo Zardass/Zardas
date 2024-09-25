@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService{
         BookEntity book = bookRepository.findById(bookId).orElseThrow(() ->
              new OurException("Book not found", "Failed to find book with ID " + bookId, null));
 
-        user.getBooks().add(book);
+     //   user.getBooks().add(book);
         userRepository.save(user);
     }
     }
