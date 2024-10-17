@@ -35,12 +35,12 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public BookResponseDTO findById(Long id) {
-        return null;
+    return null;
     }
 
     @Override
     public void deleteByid(Long id) {
-
+        repository.deleteById(id);
     }
 
     @Override

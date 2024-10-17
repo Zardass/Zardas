@@ -31,5 +31,9 @@ public class BookRestController {
         }
         bookService.update(req);
     }
-    
+
+    @DeleteMapping(path = "/{id}")
+    public void delete(@PathVariable Long id){
+        bookService.deleteByid(id);
+    }
 }
