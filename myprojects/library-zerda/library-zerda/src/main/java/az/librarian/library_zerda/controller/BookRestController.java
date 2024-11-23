@@ -3,6 +3,7 @@ package az.librarian.library_zerda.controller;
 import az.librarian.library_zerda.exception.OurException;
 import az.librarian.library_zerda.request.BookAddRequestDTO;
 import az.librarian.library_zerda.request.BookUpdateRequestDTO;
+import az.librarian.library_zerda.response.BookResponseDTO;
 import az.librarian.library_zerda.service.BookService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -35,5 +36,10 @@ public class BookRestController {
     @DeleteMapping(path = "/{id}")
     public void delete(@PathVariable Long id){
         bookService.deleteByid(id);
+    }
+
+    @GetMapping(path = "/{id}")
+    public BookResponseDTO findById(@PathVariable Long id){
+       return bookService.findById(id);
     }
 }

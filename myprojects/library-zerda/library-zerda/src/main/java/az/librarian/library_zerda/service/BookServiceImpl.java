@@ -35,7 +35,10 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public BookResponseDTO findById(Long id) {
-    return null;
+        BookEntity entity = repository.findById(id).orElseThrow(()->new OurException("kitab tapilmadi","",null));
+        BookResponseDTO dto = new BookResponseDTO();
+        mapper.map(entity,dto);
+        return dto;
     }
 
     @Override

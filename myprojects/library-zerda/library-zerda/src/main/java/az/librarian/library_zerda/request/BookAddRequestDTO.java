@@ -21,7 +21,7 @@ public class BookAddRequestDTO {
     @NotBlank(message = "muellifi bos qoymaq olmaz")
     private String author;
 
-    @Min(value = 1,message = "segife sayi minimum 1 ola biler")
+    @Min(value = 3,message = "segife sayi minimum 1 ola biler")
     private Integer pageCount;
 
     private Double price;
